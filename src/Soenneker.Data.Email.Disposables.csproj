@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>Simply adds a list of compiled disposable/temporary email domains, updated daily</Description>
+        <Description>Simply adds a list of compiled disposable/temporary email domains, updated daily (if available)</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">2.1.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Data.Email.Disposables</AssemblyName>

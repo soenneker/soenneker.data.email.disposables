@@ -3,10 +3,12 @@
 [![](https://img.shields.io/nuget/dt/soenneker.data.email.disposables.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.data.email.disposables/)
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Data.Email.Disposables
-### Simply adds a list of compiled disposable/temporary email domains, updated daily
+### Simply adds a list of compiled disposable/temporary email domains, updated daily (if available)
 
 ## Installation
 
 ```
 dotnet add package Soenneker.Data.Email.Disposables
 ```
+
+The file is copied to the output directory, and located at the relative path: `Resources\data-email-disposables.txt`.
