@@ -42,7 +42,7 @@
         <None Include="Resources\data-email-disposables.txt"
                Pack="true"
                PackageCopyToOutput="true" 
-               PackagePath="contentFiles\any\any\Resources\data-email-disposables.txt"
+               PackagePath="contentFiles/any/any/Resources/%(RecursiveDir)"
                BuildAction="None" />
     </ItemGroup>
 </Project>
