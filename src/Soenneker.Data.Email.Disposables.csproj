@@ -36,6 +36,6 @@
         <None Include="..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\icon.png" Pack="true" PackagePath="\" />
-        <Content Include="Resources\data-email-disposables.txt" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Resources\"  BuildAction="None"/>
+        <Content Include="Resources\data-email-disposables.txt" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Resources\data-email-disposables.txt"  BuildAction="None"/>
     </ItemGroup>
 </Project>
