@@ -1,4 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
@@ -30,12 +32,17 @@
         <LangVersion>latest</LangVersion>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageIcon>icon.png</PackageIcon>
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild></PropertyGroup>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
 
     <ItemGroup>
         <None Include="..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\icon.png" Pack="true" PackagePath="\" />
-        <Content Include="Resources\data-email-disposables.txt" Pack="true" PackageCopyToOutput="true" PackagePath="contentFiles\any\any\Resources\data-email-disposables.txt"  BuildAction="None"/>
+        <None Include="Resources\data-email-disposables.txt"
+               Pack="true"
+               PackageCopyToOutput="true" 
+               PackagePath="contentFiles\any\any\Resources\data-email-disposables.txt"
+               BuildAction="None" />
     </ItemGroup>
 </Project>
