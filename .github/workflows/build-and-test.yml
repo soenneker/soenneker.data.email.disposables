@@ -39,6 +39,3 @@ jobs:
 
       - name: Test
         run: dotnet test test/Soenneker.Data.Email.Disposables.Tests/Soenneker.Data.Email.Disposables.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
-
-      - name: Pack
-        run: dotnet pack src/Soenneker.Data.Email.Disposables/Soenneker.Data.Email.Disposables.csproj --configuration Release --no-build --no-restore --output . --verbosity minimal
