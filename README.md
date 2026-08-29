@@ -3,13 +3,21 @@
 [![](https://img.shields.io/nuget/dt/soenneker.data.email.disposables.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.data.email.disposables/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.data.email.disposables/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.data.email.disposables/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Data.Email.Disposables
-### Simply adds a list of compiled disposable/temporary email domains, updated daily (if available)
+# Soenneker.Data.Email.Disposables
 
-## Installation
+Simply adds a list of compiled disposable/temporary email domains, updated daily (if available).
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Data.Email.Disposables
 ```
 
-The file is copied to the output directory, and located at the relative path: `Resources\data-email-disposables.txt`.
+## What it provides
+
+- Simply adds a list of compiled disposable/temporary email domains, updated daily (if available).
+- The file is copied to the output directory, and located at the relative path: `Resources\data-email-disposables.txt`.
+
+## How to use it
+
+After installation, resolve the packaged file from the output-relative path above. The package deploys the asset but does not invoke it for you.
