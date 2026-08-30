@@ -5,19 +5,49 @@
 
 # Soenneker.Data.Email.Disposables
 
-Simply adds a list of compiled disposable/temporary email domains, updated daily (if available).
+A packaged newline-delimited list of domains associated with disposable or temporary email services.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Data.Email.Disposables
 ```
 
-## What it provides
+The package copies this file to the consuming application's output directory:
 
-- Simply adds a list of compiled disposable/temporary email domains, updated daily (if available).
-- The file is copied to the output directory, and located at the relative path: `Resources\data-email-disposables.txt`.
+```text
+Resources/data-email-disposables.txt
+```
 
-## How to use it
+It contains one domain per line. The package provides data only—there is no service, parser, validator, or dependency-injection registration.
 
-After installation, resolve the packaged file from the output-relative path above. The package deploys the asset but does not invoke it for you.
+## Load the domain set
+
+```csharp
+string path = Path.Combine(
+    AppContext.BaseDirectory,
+    "Resources",
+    "data-email-disposables.txt");
+
+HashSet<string> disposableDomains = File.ReadLines(path)
+    .Select(static line => line.Trim())
+    .Where(static line => line.Length > 0)
+    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+```
+
+Then compare a normalized domain, not the complete email address:
+
+```csharp
+string domain = "mailinator.com";
+bool isDisposable = disposableDomains.Contains(domain.TrimEnd('.'));
+```
+
+Parse and validate email addresses before extracting their domain. Convert internationalized domain names to their ASCII/Punycode form when required by your input pipeline, and remove a terminal DNS dot before lookup.
+
+## Operational guidance
+
+The list is a snapshot shipped with the installed package version. Updating the NuGet package updates the output asset; an already deployed application does not download list changes at runtime.
+
+Domain-list matching is heuristic. Providers appear, disappear, and change ownership, and legitimate domains can be listed accidentally. Use the result as one abuse signal rather than the sole reason to reject an account. Consider an override list and log decisions so false positives can be corrected.
+
+Loading the file into a case-insensitive `HashSet<string>` provides fast repeated lookup at the cost of retaining the complete list in memory. For occasional checks, scanning the file or using a different indexed store may be more appropriate.
